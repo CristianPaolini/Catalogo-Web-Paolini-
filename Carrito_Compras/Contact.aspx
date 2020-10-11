@@ -5,7 +5,7 @@
     <h3>Aquí podrá encontrar medios para contactar a los desarrolladores del proyecto...</h3>
     <address>
         UTN FRGP<br />
-        Gral. Pacheco, Bs. As<br />
+        Gral. Pacheco, Buenos Aires<br />
         <abbr title="Phone">Celular</abbr>
         15-00000000
     </address>
