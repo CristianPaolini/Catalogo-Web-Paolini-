@@ -2,10 +2,11 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
-    <h3>Aquí podrá encontrar medios para contactar a los desarrolladores del proyecto...</h3>
+    <h3>Aquí podrás encontrar medios para contactar a los desarrolladores del proyecto...</h3>
     <address>
         UTN FRGP<br />
-        Gral. Pacheco, Buenos Aires<br />
+        Gral. Pacheco, Buenos Aires
+        Dirección: Av. Hipólito Yrigoyen 288<br />
         <abbr title="Phone">Celular</abbr>
         15-00000000
     </address>

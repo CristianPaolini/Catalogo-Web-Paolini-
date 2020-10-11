@@ -10,7 +10,7 @@
         <div class="row">
             <%foreach (Dominio.Articulo item in listaArticulos)
                 { %>
-            <div class="card-columns" style="display:inline-flex;">
+            <div class="card-columns" style="display:inline-flex; margin: 10px">
                 <div class="card">
                   <img src="<% = item.ImagenUrl %>" class="card-img-top" style="max-width:300px; max-height:300px;" alt="Imagen no disponible";>
                     <div class="card-body">
