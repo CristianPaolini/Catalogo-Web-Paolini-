@@ -72,3 +72,7 @@ C:\Users\CRISTIAN PAOLINI\source\repos\TP-WEB\Carrito_Compras\obj\Debug\Carrito_
 C:\Users\CRISTIAN PAOLINI\source\repos\TP-WEB\Carrito_Compras\obj\Debug\Carrito_Compras.csproj.CopyComplete
 C:\Users\CRISTIAN PAOLINI\source\repos\TP-WEB\Carrito_Compras\obj\Debug\Carrito_Compras.dll
 C:\Users\CRISTIAN PAOLINI\source\repos\TP-WEB\Carrito_Compras\obj\Debug\Carrito_Compras.pdb
+C:\Users\CRISTIAN PAOLINI\source\repos\TP-WEB\Carrito_Compras\bin\Dominio.dll
+C:\Users\CRISTIAN PAOLINI\source\repos\TP-WEB\Carrito_Compras\bin\Negocio.dll
+C:\Users\CRISTIAN PAOLINI\source\repos\TP-WEB\Carrito_Compras\bin\Dominio.pdb
+C:\Users\CRISTIAN PAOLINI\source\repos\TP-WEB\Carrito_Compras\bin\Negocio.pdb
