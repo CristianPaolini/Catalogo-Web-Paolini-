@@ -15,7 +15,18 @@ namespace CarritoMasterPropia
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulos = negocio.listar();
+            try
+            {
+                
+                listaArticulos = negocio.listar();
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
     }
    
