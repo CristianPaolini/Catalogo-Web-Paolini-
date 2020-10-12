@@ -7,3 +7,12 @@ C:\Users\CRISTIAN PAOLINI\source\repos\TP-WEB\Negocio\obj\Debug\Negocio.csproj.C
 C:\Users\CRISTIAN PAOLINI\source\repos\TP-WEB\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\CRISTIAN PAOLINI\source\repos\TP-WEB\Negocio\obj\Debug\Negocio.dll
 C:\Users\CRISTIAN PAOLINI\source\repos\TP-WEB\Negocio\obj\Debug\Negocio.pdb
+D:\utn\cuatri 3\re-Prog3\carrito con compañero\Catalogo-Web-Fernandez-Paolini\Negocio\bin\Debug\Negocio.dll
+D:\utn\cuatri 3\re-Prog3\carrito con compañero\Catalogo-Web-Fernandez-Paolini\Negocio\bin\Debug\Negocio.pdb
+D:\utn\cuatri 3\re-Prog3\carrito con compañero\Catalogo-Web-Fernandez-Paolini\Negocio\bin\Debug\Dominio.dll
+D:\utn\cuatri 3\re-Prog3\carrito con compañero\Catalogo-Web-Fernandez-Paolini\Negocio\bin\Debug\Dominio.pdb
+D:\utn\cuatri 3\re-Prog3\carrito con compañero\Catalogo-Web-Fernandez-Paolini\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+D:\utn\cuatri 3\re-Prog3\carrito con compañero\Catalogo-Web-Fernandez-Paolini\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+D:\utn\cuatri 3\re-Prog3\carrito con compañero\Catalogo-Web-Fernandez-Paolini\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+D:\utn\cuatri 3\re-Prog3\carrito con compañero\Catalogo-Web-Fernandez-Paolini\Negocio\obj\Debug\Negocio.dll
+D:\utn\cuatri 3\re-Prog3\carrito con compañero\Catalogo-Web-Fernandez-Paolini\Negocio\obj\Debug\Negocio.pdb
