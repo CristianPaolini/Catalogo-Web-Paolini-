@@ -4,7 +4,7 @@
 
     <div class="jumbotron">
         <h1>Paolini's Business</h1>
-        <p class="lead">En Paolini's Business, ofrecemos productos de excelente calidad a precios accesibles y en cómodas cuotas .</p>
+        <p class="lead"></p>
         <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
 
