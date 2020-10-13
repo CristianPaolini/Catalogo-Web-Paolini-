@@ -14,27 +14,18 @@ namespace Carrito_Compras
         public Articulo articuloDetalle { get; set; }
 
         public List<Articulo> listaArticulosCarrito { get; set; }
-        Dictionary<int, int> listaCarrito = new Dictionary<int, int>();
         protected void Page_Load(object sender, EventArgs e)
         {
 
             ArticuloNegocio negocio = new ArticuloNegocio();
-            List<Articulo> listaAux;
             try
             {
-                listaAux = negocio.listar();
-                int idAux = Convert.ToInt32(Request.QueryString["idArticulo"]);
-                articuloDetalle = listaAux.Find(x => x.Id == idAux);
-
-                if (listaCarrito == null)
-                {
-                    listaCarrito = new Dictionary<int, int>();
-                }
-
+                listaArticulosCarrito = negocio.listar();
+                Session.Add("listadoArticulos", listaArticulosCarrito);
             }
             catch (Exception ex)
             {
-                Session.Add("Session_id_" + Session.SessionID + "_error", ex.Message);
+                Session.Add("errorEncontrado", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
         }

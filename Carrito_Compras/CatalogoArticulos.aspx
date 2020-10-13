@@ -17,7 +17,7 @@
                        <h5 style="margin-left: auto; margin-right: auto; text-align: center; color:darkblue; font-style:oblique" class="card-title"><% = item.Nombre %></h5>
                          <p style="margin-left: auto; margin-right: auto; text-align: center; color:black; font-style:italic" class="card-text"><%= item.Marca %></p>
                            <p style="margin-left: auto; margin-right: auto; text-align: center; color:black; font-style:italic" class="card-text">$<%= item.Precio %></p>
-                        <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                        <a href="Detalle.aspx?idArticulo=" <% = item.Id.ToString() %> class="btn btn-primary">Detalle</a>
                     </div>
                 </div>
             </div>
