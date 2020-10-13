@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -18,10 +19,12 @@ namespace Carrito_Compras
         {
 
             ArticuloNegocio negocio = new ArticuloNegocio();
+            List<Articulo> listaAux;
             try
             {
-                listaArticulosCarrito = negocio.listar();
-                Session.Add("listadoArticulos", listaArticulosCarrito);
+                listaAux = negocio.listar();
+                int idAux = Convert.ToInt32(Request.QueryString["idArticulo"]);
+                articuloDetalle = listaAux.Find(i => i.Id == idAux);
             }
             catch (Exception ex)
             {
