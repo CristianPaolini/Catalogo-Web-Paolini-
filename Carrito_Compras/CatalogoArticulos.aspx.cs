@@ -17,5 +17,10 @@ namespace Carrito_Compras
             ArticuloNegocio negocio = new ArticuloNegocio();
             listaArticulos = negocio.listar();
         }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

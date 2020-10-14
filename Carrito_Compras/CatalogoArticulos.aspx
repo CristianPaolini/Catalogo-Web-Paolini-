@@ -6,6 +6,11 @@
 
     <div>
    <h1 style="color:cadetblue; font-style:italic";>Catálogo de artículos</h1>
+        <div>
+            <asp:TextBox ID="txtBuscar" runat="server" TextMode="Search"
+                CausesValidation="true"></asp:TextBox>
+            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
+        </div>
     </div>
     <hr />
     <div class="container">
@@ -19,8 +24,8 @@
                        <h5 style="color:darkblue; font-style:oblique" class="card-title"><% = item.Nombre %></h5>
                          <p style="color:black; font-style:italic" class="card-text"><%= item.Marca %></p>
                            <p style="color:black; font-style:italic" class="card-text">$<%= item.Precio %></p>
-                        <a href="Detalle.aspx?idArticulo" <% = item.Id.ToString() %> class="btn btn-primary">Detalle</a>
-                        <a href="Carrito.aspx?idArticulo" <% = item.Id.ToString() %> class="btn btn-primary"<>Añadir al carrito</a>
+                        <a href="Detalle.aspx?idArticulo=<%=item.Id.ToString()%>"class="btn btn-primary">Detalle</a>
+                        <a href="Carrito.aspx?idArticulo=<%=item.Id.ToString()%>"class="btn btn-primary">Añadir al carrito</a>
                     </div>
                 </div>
             </div>
@@ -29,3 +34,5 @@
     </div>
 
 </asp:Content>
+
+<%--<a href="Detalle Producto.aspx?idArticulo=<%=item.Id.ToString()%>" class="btn btn-primary">Detalle Producto</a>--%>
