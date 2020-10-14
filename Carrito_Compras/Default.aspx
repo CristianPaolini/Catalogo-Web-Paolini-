@@ -3,12 +3,12 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>Paolini's Business</h1>
+        <h2>Bienvenido al carrito de compras virtual. Por favor, presione el botón para ser redirigido/a al catálogo de artículos</h2>
         <p class="lead"></p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <p><a href="CatalogoArticulos.aspx" class="btn btn-primary btn-lg">Ir a catálogo &raquo;</a></p>
     </div>
 
-    <div class="row">
+<%--    <div class="row">
         <div class="col-md-4">
             <h2>Getting started</h2>
             <p>
@@ -37,6 +37,6 @@
                 <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
             </p>
         </div>
-    </div>
+    </div>--%>
 
 </asp:Content>
