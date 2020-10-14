@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio;
-using System.Data.SqlClient;
 
 namespace Negocio
 {
@@ -12,25 +11,17 @@ namespace Negocio
     {
         public List<Marca> listar()
         {
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader lector;
+            AccesoDatos conexion = new AccesoDatos();
             List<Marca> lista = new List<Marca>();
 
-            conexion.ConnectionString = "data source=.\\sqlexpress; initial catalog=CATALOGO_DB; integrated security=sspi";
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "Select Id, Descripcion From MARCAS";
-            comando.Connection = conexion;
+            conexion.setearQuery("Select Id, Descripcion From MARCAS");
+            conexion.ejecutarLector();
 
-            conexion.Open();
-            lector = comando.ExecuteReader();
-
-            while (lector.Read())
+            while (conexion.lector.Read())
             {
-                lista.Add(new Marca((int)lector["Id"], (string)lector["Descripcion"]));
+                lista.Add(new Marca((int)conexion.lector["Id"], (string)conexion.lector["Descripcion"]));
             }
-            lector.Close();
-            conexion.Close();
+            conexion.cerrarConexion();
             return lista;
         }
     }
