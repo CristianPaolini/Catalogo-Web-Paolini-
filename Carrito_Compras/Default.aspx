@@ -3,12 +3,12 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h2>Bienvenido al carrito de compras virtual. Por favor, presione el botón para ser redirigido/a al catálogo de artículos</h2>
+        <h2 style="color: darkslateblue; font-style: italic">Bienvenido al carrito de compras virtual. Por favor, presione el botón que se encuentra debajo para ser redirigido/a al catálogo de artículos:</h2>
         <p class="lead"></p>
-        <p><a href="CatalogoArticulos.aspx" class="btn btn-primary btn-lg">Ir a catálogo &raquo;</a></p>
+        <p><a href="CatalogoArticulos.aspx" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Ir al catálogo &raquo;</a></p>
     </div>
-
-<%--    <div class="row">
+    <img style="resize: both" src="https://img.freepik.com/vector-gratis/venta-carrito-compras-completo-pictograma-rojo_1284-8505.jpg?size=338&ext=jpg" alt="Imagen no disponible" />
+    <%--    <div class="row">
         <div class="col-md-4">
             <h2>Getting started</h2>
             <p>
@@ -38,5 +38,4 @@
             </p>
         </div>
     </div>--%>
-
 </asp:Content>
