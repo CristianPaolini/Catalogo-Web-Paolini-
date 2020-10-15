@@ -6,15 +6,16 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
     <title><%: Page.Title %> - Carrito de compras</title>
 
-    <asp:PlaceHolder runat="server">
+    <%--    <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />--%>
 </head>
 <body>
     <form runat="server">
@@ -29,10 +30,10 @@
                     <a class="navbar-brand" runat="server" href="~/">Inicio</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">                     
+                    <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/CatalogoArticulos">Catálogo</a></li>
                         <li><a runat="server" href="~/Carrito">Carrito</a></li>
-                        
+
                     </ul>
                 </div>
             </div>
