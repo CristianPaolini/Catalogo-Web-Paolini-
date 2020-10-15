@@ -8,8 +8,8 @@
             <div class="card-body">
                 <h2 class="display-4"><%=articuloDetalle.Nombre %></h2>
                 <p class="lead">$<% = articuloDetalle.Precio %></p>
-                <p class="lead">Marca: <% = articuloDetalle.Marca %></p>
-                <p class="lead">Categoría: <% = articuloDetalle.Categoria %></p>
+                <p class="lead">Marca: <% = articuloDetalle.Marca.Descripcion %></p>
+                <p class="lead">Categoría: <% = articuloDetalle.Categoria.Descripcion %></p>
                 <p><a href="CatalogoArticulos.aspx" class="btn btn-primary btn-lg">Volver al catálogo &raquo;</a></p>
             </div>
         </div>

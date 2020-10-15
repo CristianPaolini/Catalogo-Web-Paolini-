@@ -20,7 +20,7 @@ namespace Carrito_Compras
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

@@ -4,14 +4,14 @@
 
 <%-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />--%>
 
-    <div>
+   
    <h1 style="color:cadetblue; font-style:italic";>Catálogo de artículos</h1>
         <div>
-            <asp:TextBox ID="txtBuscar" runat="server" TextMode="Search"
+            <asp:TextBox ID="txtBuscar"   runat="server" TextMode="Search"
                 CausesValidation="true"></asp:TextBox>
-            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
+            <asp:Button ID="btnBuscar" CssClass="btn btn-default" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
         </div>
-    </div>
+    
     <hr />
     <div class="container">
         <div class="row">
