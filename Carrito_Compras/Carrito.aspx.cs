@@ -23,7 +23,7 @@ namespace Carrito_Compras
                 listaCarrito =(List<Articulo>) Session[Session.SessionID + "listaCarrito"];
                 listaOriginal = negocio.listar();
 
-                var quitar = Request.QueryString["idQuitar"];
+                var quitar = Request.QueryString["idArticulo"];
                 if (quitar != null)
                 {
                     Articulo quitarArticulo = listaOriginal.Find(x => x.Id == int.Parse(quitar));
