@@ -6,10 +6,10 @@
             <div class="col">
                 <table class="table">
                     <tr>
-                        <td>Nombre</td>
-                        <td>Marca</td>
-                        <td>Precio </td>
-                        <td>Accion</td>
+                        <td>Nombre: </td>
+                        <td>Marca: </td>
+                        <td>Precio: </td>
+                        <td>Accion: </td>
                     </tr>
                     
                     <%foreach (var articulo in listaCarrito )
@@ -19,14 +19,16 @@
                     <tr>
                         <td><% = articulo.Nombre %></td>
                         <td><% = articulo.Marca %></td>
-                        <td><% = articulo.Precio %></td>
-                      <td><a href="Carrito.aspx?idQuitar=<% = articulo.Id.ToString()%>" >Quitar</a></td>
+                        <td>$<% = articulo.Precio %></td>
+                      <td><a href="Carrito.aspx?idArticulo=<% = articulo.Id.ToString() %>&quitar=<%= 1.ToString() %>" class="btn btn-primary">Quitar</a></td>
+                                            
+                                
 
                     </tr>
                     
                     <% } %>
                     <tr>
-                        <td> Total <asp:Label ID ="lblTotal" runat="server" /></td>
+                        <td> Total: $<asp:Label ID ="lblTotal" runat="server" /></td>
                     </tr>
                 </table>
 

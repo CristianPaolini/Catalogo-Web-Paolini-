@@ -3,11 +3,26 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div>
-        <h1 style="color: cadetblue; font-style: italic">Catálogo de artículos</h1>
+        <h1 style="color: black; font-style: italic; margin-left: auto; margin-right: auto; text-align: center;">Catálogo de artículos</h1>
         <div>
-            <asp:TextBox ID="txtBuscar" runat="server" TextMode="Search"
-                CausesValidation="true"></asp:TextBox>
-            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
+
+            <div>
+                <%foreach (var articulo in listaArticulos)
+                        { %>
+                    <a href="Detalle.aspx?idArticulo="<%=articulo.Id.ToString()%>"></a>
+                    
+                       <% } %>
+            </div>
+            <div>
+                <asp:Button BorderStyle="Inset" ID="btnBuscar" runat="server" Text="Buscar por nombre:" OnClick="btnBuscar_Click" />
+            </div>
+            <div>
+                <asp:TextBox MaxLength="200" ID="txtBuscar" runat="server" TextMode="Search" CausesValidation="true"></asp:TextBox>
+            </div>        
+                
+            <p>
+                <asp:Label ID="lblError" runat="server"></asp:Label>
+            </p>
         </div>
     </div>
     <hr />

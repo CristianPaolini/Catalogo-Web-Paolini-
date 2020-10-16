@@ -21,7 +21,35 @@ namespace Carrito_Compras
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            List<Articulo> listaAux;
+            Articulo buscado = new Articulo();
+            try
+            {
+                listaAux = negocio.listar();
+                buscado = listaAux.Find(i => i.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper()));
+                if (buscado == null)
+                {
+                    string msgErrorBusqueda = "No se han encontrado coincidencias";
+                    lblError.Text = msgErrorBusqueda;
+                }
+                else if (txtBuscar.Text.Length == 0)
+                {
+                    string msgSinIngreso = "No ha ingresado nada para buscar";
+                    lblError.Text = msgSinIngreso;
+                }
+                else
+                {
+                    Response.Redirect("Detalle.aspx?idArticulo=" + buscado.Id.ToString());
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
+
     }
 }
