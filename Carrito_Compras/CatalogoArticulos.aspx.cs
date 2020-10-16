@@ -16,6 +16,7 @@ namespace Carrito_Compras
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             listaArticulos = negocio.listar();
+            Session[Session.SessionID + "listaArticulos"] = listaArticulos;
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)

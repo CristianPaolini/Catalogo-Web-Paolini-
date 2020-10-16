@@ -14,7 +14,6 @@ namespace Carrito_Compras
     {
         public Articulo articuloDetalle { get; set; }
 
-        public List<Articulo> listaArticulosCarrito { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
 
