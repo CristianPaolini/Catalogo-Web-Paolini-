@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-        <h1>Error</h1>
+        <h1 style="color: red">Error</h1>
         <asp:Label Text="text" ID="lblError" runat="server" />
         <div>
             <a href="CatalogoArticulos.aspx">Volver</a>
