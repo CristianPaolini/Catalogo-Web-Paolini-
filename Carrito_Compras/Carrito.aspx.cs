@@ -28,9 +28,10 @@ namespace Carrito_Compras
 
                 if (articuloSelec == null) Response.Redirect("CatalogoArticulos.aspx");
 
-                if(Session["listaArtAgregados"] == null)
+                if (Session["listaArtAgregados"] == null)
                 {
                     listaCarrito = new List<Articulo>();
+                    listaCarrito.Add(articuloSelec);
                     Session.Add("listaArtAgregados", listaCarrito);
                 }
                 else
