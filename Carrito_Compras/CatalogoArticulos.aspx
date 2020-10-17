@@ -3,12 +3,12 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div>
-        <h1 style="text-decoration:underline; color:Highlight; font-style: italic; margin-left: auto; margin-right: auto; text-align: center; ">Catálogo de artículos</h1>
+        <h1 style="text-decoration: underline; color: Highlight; font-style: italic; margin-left: auto; margin-right: auto; text-align: center;">Catálogo de artículos</h1>
         <div>
 
             <div>
                 <%foreach (var articulo in listaArticulos)
-                        { %>
+                    { %>
                 <a href="Detalle.aspx?idArticulo=<%=articulo.Id.ToString()%>"></a>
 
                 <% } %>

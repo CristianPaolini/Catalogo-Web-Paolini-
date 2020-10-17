@@ -9,7 +9,8 @@
             <p style="color: black; font-style: italic" class="lead">Precio: $<% = articuloDetalle.Precio %></p>
             <p style="color: black; font-style: italic" class="lead">Marca: <% = articuloDetalle.Marca %></p>
             <p style="color: black; font-style: italic" class="lead">Categoría: <% = articuloDetalle.Categoria %></p>
-            <p><a href="CatalogoArticulos.aspx" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Volver al catálogo &raquo;</a></p>
+            <p><a href="Carrito.aspx?idArticulo=<%=articuloDetalle.Id%>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir al carrito</a></p>
+            <p><a href="CatalogoArticulos.aspx" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Volver al catálogo</a></p>
         </div>
     </div>
 </asp:Content>

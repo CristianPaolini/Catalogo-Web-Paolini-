@@ -33,7 +33,7 @@ namespace Carrito_Compras
                     Response.Redirect("CatalogoArticulos.aspx");
                 }
 
-                if(Request.QueryString["idQuitar"] != null)
+                if (Request.QueryString["idQuitar"] != null)
                 {
                     List<Articulo> listaArticulos = (List<Articulo>)Session["listaArtAgregados"];
                     listaCarrito = (List<Articulo>)Session["listaCarrito"];
@@ -44,7 +44,7 @@ namespace Carrito_Compras
 
                 listaCarrito = (List<Articulo>)Session["listaCarrito"];
 
-                
+
             }
             catch (Exception ex)
             {
@@ -56,4 +56,3 @@ namespace Carrito_Compras
         }
     }
 }
-           
