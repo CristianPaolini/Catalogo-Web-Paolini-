@@ -14,33 +14,42 @@ namespace Carrito_Compras
         public Articulo articuloSelec { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Request.QueryString["id"] == null || Request.QueryString["op"] == null) Response.Redirect("~/");
 
-            List<Articulo> listaCarrito = (List<Articulo>)Session[Session.SessionID + "listaArtAgregados"];
+            List<Articulo> listaCarrito = (List<Articulo>)Session[Session.SessionID + "listaCarrito"];
             ArticuloNegocio negocio = new ArticuloNegocio();
             List<Articulo> listaAux;
             try
             {
                 listaAux = negocio.listar();
-                int idSeleccionado = Convert.ToInt32(Request.QueryString["id"]);
-                articuloSelec = listaAux.Find(i => i.Id == idSeleccionado);
+                int idQuitar = Convert.ToInt32(Request.QueryString["idQuitar"]);
+                articuloSelec = listaAux.Find(i => i.Id == idQuitar);
 
-                if (articuloSelec == null)
+                if (listaCarrito == null)
+                {
+                    listaCarrito = new List<Articulo>();
+                }
+                if (Session["listaCarrito"] == null)
                 {
                     Response.Redirect("CatalogoArticulos.aspx");
                 }
-                else
+
+                if(Request.QueryString["idQuitar"] != null)
                 {
-                    listaCarrito.Remove(articuloSelec);
-                    Session["listaArtAgregados"] = listaCarrito;
+                    List<Articulo> listaArticulos = (List<Articulo>)Session["listaArtAgregados"];
+                    listaCarrito = (List<Articulo>)Session["listaCarrito"];
+                    listaCarrito.Remove(listaCarrito.Find(i => i.Id == idQuitar));
+                    Session["listaCarrito"] = listaCarrito;
+                    Response.Redirect("Carrito.aspx");
                 }
+
+                listaCarrito = (List<Articulo>)Session["listaCarrito"];
+
                 
             }
             catch (Exception ex)
             {
 
-                Session.Add("errorDetectado", ex.ToString());
-                Response.Redirect("Error.aspx");
+                throw ex;
             }
 
 

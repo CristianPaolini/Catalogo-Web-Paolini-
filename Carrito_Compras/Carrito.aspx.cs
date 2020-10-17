@@ -24,32 +24,36 @@ namespace Carrito_Compras
             {
                 listaAux = negocio.listar();
                 int idAux = Convert.ToInt32(Request.QueryString["idArticulo"]);
-                articuloSelec = listaAux.Find(i => i.Id == idAux);
 
-                if (articuloSelec == null) Response.Redirect("CatalogoArticulos.aspx");
-
-                if (Session["listaArtAgregados"] == null)
+                if (listaCarrito == null)
                 {
                     listaCarrito = new List<Articulo>();
-                    listaCarrito.Add(articuloSelec);
+                }
+
+                if (Session["listaArtAgregados"] == null) //si no tiene nada, creo una lista Carrito
+                {
+                    listaCarrito = new List<Articulo>();
                     Session.Add("listaArtAgregados", listaCarrito);
                 }
-                else
+
+                if (Request.QueryString["idArticulo"] != null) //si no devuelve null, está todo bien, procede a añadirlo
                 {
+
                     listaCarrito = (List<Articulo>)Session["listaArtAgregados"];
-                    listaCarrito.Add(articuloSelec);
-                    Session["listaArtAgregados"] = listaCarrito;
+                    listaCarrito.Add(listaAux.Find(i => i.Id == idAux));
+                    Session["listaCarrito"] = listaCarrito;
+
                 }
-                if(listaCarrito != null)
+
+                listaCarrito = (List<Articulo>)Session["listaCarrito"];
+
+                SqlMoney total = 0;
+                foreach (var articulo in listaCarrito)
                 {
-                    SqlMoney total = 0;
-                    foreach (var articulo in listaCarrito)
-                    {
-                        total += articulo.Precio;
-                    }
-                    lblTotal.Text = total.ToString();
+                    total += articulo.Precio;
                 }
-                
+                lblTotal.Text = total.ToString();
+
             }
             catch (Exception ex)
             {

@@ -21,7 +21,7 @@
                         <td><% = articulo.Nombre %></td>
                         <td><% = articulo.Marca %></td>
                         <td>$<% = articulo.Precio %></td>
-                        <td><a href="Calcs.aspx?id=<%=articulo.Id.ToString()%>" class="btn btn-danger">X</a></td>
+                        <td><a href="Calcs.aspx?idQuitar=<%=articulo.Id.ToString()%>" class="btn btn-danger">Eliminar</a></td>
 
 
 
@@ -29,7 +29,7 @@
 
                     <% } %>
                     <tr>
-                        <td>Total: $<asp:Label ID="lblTotal" runat="server" /></td>
+                        <td>Total a pagar: $<asp:Label ID="lblTotal" runat="server" /></td>
                     </tr>
                 </table>
 
