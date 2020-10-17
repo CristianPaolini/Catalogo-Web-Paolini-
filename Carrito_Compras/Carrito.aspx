@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="Carrito_Compras.Carrito" %>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Label ID="lblCarrito" runat="server" Text=""></asp:Label>
     <div class="container">
@@ -11,8 +12,8 @@
                         <td>Precio: </td>
                         <td>Accion: </td>
                     </tr>
-                    
-                    <%foreach (var articulo in listaCarrito )
+
+                    <%foreach (var articulo in listaCarrito)
                         {
                     %>
 
@@ -20,15 +21,15 @@
                         <td><% = articulo.Nombre %></td>
                         <td><% = articulo.Marca %></td>
                         <td>$<% = articulo.Precio %></td>
-                      <td><a href="Carrito.aspx?idArticulo=<% = articulo.Id.ToString() %>&quitar=<%= 1.ToString() %>" class="btn btn-primary">Quitar</a></td>
-                                            
-                                
+                        <td><a href="Calcs.aspx?id=<%=articulo.Id.ToString()%>" class="btn btn-danger">X</a></td>
+
+
 
                     </tr>
-                    
+
                     <% } %>
                     <tr>
-                        <td> Total: $<asp:Label ID ="lblTotal" runat="server" /></td>
+                        <td>Total: $<asp:Label ID="lblTotal" runat="server" /></td>
                     </tr>
                 </table>
 
@@ -37,3 +38,4 @@
         </div>
     </div>
 </asp:Content>
+

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,50 +12,48 @@ namespace Carrito_Compras
 {
     public partial class Carrito : System.Web.UI.Page
     {
-        public List<Articulo> listaCarrito = new List<Articulo>();
-        
+        public Articulo articuloSelec { get; set; }
+        public List<Articulo> listaCarrito { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            List<Articulo> listaOriginal;
+            List<Articulo> listaAux = new List<Articulo>();
+
             try
             {
-                decimal total = 0;
-                listaCarrito =(List<Articulo>) Session[Session.SessionID + "listaCarrito"];
-                listaOriginal = negocio.listar();
+                listaAux = negocio.listar();
+                int idAux = Convert.ToInt32(Request.QueryString["idArticulo"]);
+                articuloSelec = listaAux.Find(i => i.Id == idAux);
 
-                var quitar = Request.QueryString["idArticulo"];
-                if (quitar != null)
+                if (articuloSelec == null) Response.Redirect("CatalogoArticulos.aspx");
+
+                if(Session["listaArtAgregados"] == null)
                 {
-                    Articulo quitarArticulo = listaOriginal.Find(x => x.Id == int.Parse(quitar));
-                    listaCarrito.Remove(quitarArticulo);
-                    Session[Session.SessionID + "listaCarrito"] = listaCarrito;
+                    listaCarrito = new List<Articulo>();
+                    Session.Add("listaArtAgregados", listaCarrito);
                 }
-                else if(Request.QueryString["idArticulo"] != null)
+                else
+                {
+                    listaCarrito = (List<Articulo>)Session["listaArtAgregados"];
+                    listaCarrito.Add(articuloSelec);
+                    Session["listaArtAgregados"] = listaCarrito;
+                }
+                if(listaCarrito != null)
+                {
+                    SqlMoney total = 0;
+                    foreach (var articulo in listaCarrito)
                     {
-                    List<Articulo> listaAux =(List<Articulo>) Session[Session.SessionID + "listaCarrito"];
-                    int idAux = Convert.ToInt32(Request.QueryString["idArticulo"]);
-                    Articulo articulo = listaAux.Find(i => i.Id == idAux);
-
-                    if (listaCarrito == null)
-                        listaCarrito = new List<Articulo>();
-
-                    listaCarrito.Add(articulo);
-                    Session[Session.SessionID + "listaCarrito"] = listaCarrito;
-
+                        total += articulo.Precio;
+                    }
+                    lblTotal.Text = total.ToString();
                 }
-
-
-                foreach (var item in listaCarrito)
-                {
-                    total += (decimal)item.Precio;
-                }
-                lblTotal.Text = total.ToString();
+                
             }
             catch (Exception ex)
             {
 
-                Session.Add("errorEncontrado", ex.ToString());
+                Session.Add("errorDetectado", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
 
