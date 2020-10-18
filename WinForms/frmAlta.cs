@@ -22,10 +22,10 @@ namespace WinForms
             InitializeComponent();
         }
 
-        public frmAlta(Articulo artic)
+        public frmAlta(Articulo articulo)
         {
             InitializeComponent();
-            articulo = artic;
+            this.articulo = articulo;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace WinForms
 
                     if (articulo == null)
 
-                        articulo = new Articulo();  //  si está vacio (porque no existe) lo crea. Sino, lo "recarga"
+                        articulo = new Articulo();
 
 
                     articulo.Codigo = txtCodigo.Text;

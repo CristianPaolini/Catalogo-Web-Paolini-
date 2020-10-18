@@ -45,9 +45,9 @@ namespace Carrito_Compras
                 Session.Add("listaBuscados", listaBuscados);
             }
             listaBuscados = (List<Articulo>)Session["listaArticulos"];
-            Session["listaBuscados"] = listaBuscados.FindAll(i => i.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper()) || i.Marca.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper()) || i.Categoria.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper())); 
+            Session["listaBuscados"] = listaBuscados.FindAll(i => i.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper()) || i.Marca.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper()) || i.Categoria.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper()));
 
-            Session["listaArticulos"] = Session["listaBuscados"]; 
+            Session["listaArticulos"] = Session["listaBuscados"];
             Response.Redirect("CatalogoArticulos.aspx");
 
         }
