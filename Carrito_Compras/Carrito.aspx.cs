@@ -39,6 +39,7 @@ namespace Carrito_Compras
                     listaCarrito = (List<Articulo>)Session["listaArtAgregados"];
                     listaCarrito.Add(listaAux.Find(i => i.Id == idAux)); //busco coincidencia del id traído por QueryString. Agrego el ID que matchea (si lo hay) 
                     Session["listaCarrito"] = listaCarrito;
+                   
 
                 }
 
@@ -53,7 +54,6 @@ namespace Carrito_Compras
                     {
                         carrito.MontoTotal += articulo.Precio;
                         carrito.CantidadArticulos++;
-
                     }
                     lblTotal.Text = carrito.MontoTotal.ToString();
                     lblCantidad.Text = carrito.CantidadArticulos.ToString();
@@ -63,6 +63,7 @@ namespace Carrito_Compras
                 {
                     listaCarrito = new List<Articulo>();
                 }
+               
             }
             catch (Exception ex)
             {

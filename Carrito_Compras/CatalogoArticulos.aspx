@@ -3,7 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div>
-        <h1 style="text-decoration: underline; color: Highlight; font-style: italic; margin-left: auto; margin-right: auto; text-align: center;">Catálogo de artículos</h1>
+        <asp:TextBox runat="server" ID="txtBuscar" />  
+        <asp:Button Text="Buscar" runat="server" OnClick="btnBuscar_Click" />
         <div>
 
             <div>
@@ -13,13 +14,7 @@
 
                 <% } %>
             </div>
-            <div>
-                <asp:Button class="btn btn-md btn-primary" BorderStyle="Inset" ID="btnBuscar" runat="server" Text="Buscar Artículo:" OnClick="btnBuscar_Click" />
-
-                <asp:TextBox Width="170px" Height="35px" MaxLength="200" ID="txtBuscar" runat="server" TextMode="Search" CausesValidation="true"></asp:TextBox>
-            </div>
-
-        </div>
+       
     </div>
     <hr />
     <div class="container">
