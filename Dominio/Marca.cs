@@ -11,10 +11,10 @@ namespace Dominio
         public int Id { get; set; }
         public string Descripcion { get; set; }
 
-        public Marca(int id, string desc)
+        public Marca(int Id, string Descripcion)
         {
-            Id = id;
-            Descripcion = desc;
+            this.Id = Id;
+            this.Descripcion = Descripcion;
 
         }
 

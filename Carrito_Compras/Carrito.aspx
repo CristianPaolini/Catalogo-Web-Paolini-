@@ -10,7 +10,7 @@
                         <td>Nombre: </td>
                         <td>Marca: </td>
                         <td>Precio: </td>
-                        <td>Accion: </td>
+                        <td>Acción: </td>
                     </tr>
 
                     <%foreach (var articulo in listaCarrito)
@@ -30,6 +30,10 @@
                     <% } %>
                     <tr>
                         <td>Total a pagar: $<asp:Label ID="lblTotal" runat="server" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Cantidad de artículos: <asp:Label ID="lblCantidad" runat="server" /></td>
                     </tr>
                 </table>
 

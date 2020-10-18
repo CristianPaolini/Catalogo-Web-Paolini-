@@ -10,3 +10,9 @@ D:\utn\cuatri 3\re-Prog3\carrito con compañero\Catalogo-Web-Fernandez-Paolini\D
 D:\utn\cuatri 3\re-Prog3\carrito con compañero\Catalogo-Web-Fernandez-Paolini\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 D:\utn\cuatri 3\re-Prog3\carrito con compañero\Catalogo-Web-Fernandez-Paolini\Dominio\obj\Debug\Dominio.dll
 D:\utn\cuatri 3\re-Prog3\carrito con compañero\Catalogo-Web-Fernandez-Paolini\Dominio\obj\Debug\Dominio.pdb
+C:\Users\CRISTIAN PAOLINI\source\repos\Catalogo-Web-Fernandez-Paolini\Dominio\bin\Debug\Dominio.dll
+C:\Users\CRISTIAN PAOLINI\source\repos\Catalogo-Web-Fernandez-Paolini\Dominio\bin\Debug\Dominio.pdb
+C:\Users\CRISTIAN PAOLINI\source\repos\Catalogo-Web-Fernandez-Paolini\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\CRISTIAN PAOLINI\source\repos\Catalogo-Web-Fernandez-Paolini\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\CRISTIAN PAOLINI\source\repos\Catalogo-Web-Fernandez-Paolini\Dominio\obj\Debug\Dominio.dll
+C:\Users\CRISTIAN PAOLINI\source\repos\Catalogo-Web-Fernandez-Paolini\Dominio\obj\Debug\Dominio.pdb

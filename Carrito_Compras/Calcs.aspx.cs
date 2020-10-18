@@ -11,7 +11,6 @@ namespace Carrito_Compras
 {
     public partial class Calcs : System.Web.UI.Page
     {
-        public Articulo articuloSelec { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -21,8 +20,7 @@ namespace Carrito_Compras
             try
             {
                 listaAux = negocio.listar();
-                int idQuitar = Convert.ToInt32(Request.QueryString["idQuitar"]);
-                articuloSelec = listaAux.Find(i => i.Id == idQuitar);
+                int idQuitar = Convert.ToInt32(Request.QueryString["idQuitar"]); 
 
                 if (listaCarrito == null)
                 {
@@ -37,7 +35,7 @@ namespace Carrito_Compras
                 {
                     List<Articulo> listaArticulos = (List<Articulo>)Session["listaArtAgregados"];
                     listaCarrito = (List<Articulo>)Session["listaCarrito"];
-                    listaCarrito.Remove(listaCarrito.Find(i => i.Id == idQuitar));
+                    listaCarrito.Remove(listaCarrito.Find(i => i.Id == idQuitar)); //lo mismo que pasa con Añadir, solo que en este caso, remueve el artículo con Id que matchee del enviado
                     Session["listaCarrito"] = listaCarrito;
                     Response.Redirect("Carrito.aspx");
                 }
