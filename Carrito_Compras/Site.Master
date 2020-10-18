@@ -8,22 +8,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
 
-    <title>TecnoINC</title>
+    <title><%: Page.Title %> Carrito de compras</title>
 
+    <%--    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />--%>
 </head>
 <body>
     <form runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <%--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>--%>
 
+                    <a runat="server" href="~/CatalogoArticulos">Catálogo</a>
+                    <a style="padding-left: 1em;" runat="server" href="~/Carrito">Carrito</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <a class="nav-link" runat="server" href="~/CatalogoArticulos">Catálogo</a>
+                        <a class="nav-link" runat="server" href="~/Carrito">Carrito</a>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" runat="server" href="~/CatalogoArticulos">TecnoINC</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" runat="server" href="~/">TecnoInc</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" runat="server" href="~/">Inicio <span class="sr-only">(current)</span></a>
+        <a class="nav-link" runat="server" href="~/CatalogoArticulos">Inicio <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" runat="server" href="~/CatalogoArticulos">Catalogo</a>
@@ -31,16 +56,12 @@
       <li class="nav-item">
         <a class="nav-link" runat="server" href="~/Carrito">Carrito</a>
       </li>
+      
     </ul>
-    <form class="form-inline my-2 my-lg-0">     
-  
-     
-
-    </form>
-
   </div>
 </nav>
         <div class="container body-content">
+
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
 
             </asp:ContentPlaceHolder>

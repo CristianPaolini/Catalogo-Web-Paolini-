@@ -10,7 +10,7 @@
                         <td>Nombre: </td>
                         <td>Marca: </td>
                         <td>Precio: </td>
-                     
+                        <td>Acción: </td>
                     </tr>
 
                     <%foreach (var articulo in listaCarrito)
@@ -22,6 +22,10 @@
                         <td><% = articulo.Marca %></td>
                         <td>$<% = articulo.Precio %></td>
                         <td><a href="Calcs.aspx?idQuitar=<%=articulo.Id.ToString()%>" class="btn btn-danger">Eliminar</a></td>
+
+
+
+
                     </tr>
 
                     <% } %>
@@ -31,10 +35,12 @@
 
                     <tr>
                         <td>Cantidad de artículos:
-                           <asp:Label ID="lblCantidad" runat="server" /></td>
-                          </tr>
+                            <asp:Label ID="lblCantidad" runat="server" /></td>
+                    </tr>
                 </table>
+
             </div>
+
         </div>
     </div>
 </asp:Content>
