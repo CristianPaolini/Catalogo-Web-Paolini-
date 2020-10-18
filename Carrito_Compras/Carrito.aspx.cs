@@ -50,6 +50,7 @@ namespace Carrito_Compras
                 if (listaCarrito != null) //este if impide que rompa si intenta listar precios de una lista Carrito está con null, y de paso en el else aprovecho para crearla
                 {
 
+<<<<<<< Updated upstream
                     foreach (var articulo in listaCarrito)
                     {
                         carrito.MontoTotal += articulo.Precio;
@@ -64,6 +65,17 @@ namespace Carrito_Compras
                     listaCarrito = new List<Articulo>();
                 }
                
+=======
+                if (listaCarrito != null)
+                {
+                    foreach (var item in listaCarrito)
+                    {
+                        total += (decimal)item.Precio;
+                    }
+                    lblTotal.Text = total.ToString();
+                }
+                
+>>>>>>> Stashed changes
             }
             catch (Exception ex)
             {
