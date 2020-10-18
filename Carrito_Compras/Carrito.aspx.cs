@@ -19,13 +19,12 @@ namespace Carrito_Compras
         {
 
             ArticuloNegocio negocio = new ArticuloNegocio();
-            List<Articulo> listaAux = new List<Articulo>();
+            List<Articulo> listaAux;
             Dominio.Carrito carrito = new Dominio.Carrito();
 
             try
             {                
                 listaAux = negocio.listar();
-                int idAux = Convert.ToInt32(Request.QueryString["idArticulo"]);
 
                 if (Session["listaArtAgregados"] == null) //si no tiene nada, creo una lista Carrito
                 {
@@ -35,7 +34,8 @@ namespace Carrito_Compras
 
                 if (Request.QueryString["idArticulo"] != null) //si no devuelve null, está todo bien, procede a añadirlo
                 {
-
+                    int idAux = Convert.ToInt32(Request.QueryString["idArticulo"]);
+                    List<Articulo> listaArticulos = (List<Articulo>)Session["listaArticulos"];
                     listaCarrito = (List<Articulo>)Session["listaArtAgregados"];
                     listaCarrito.Add(listaAux.Find(i => i.Id == idAux)); //busco coincidencia del id traído por QueryString. Agrego el ID que matchea (si lo hay) 
                     Session["listaCarrito"] = listaCarrito;
@@ -43,6 +43,8 @@ namespace Carrito_Compras
                 }
 
                 listaCarrito = (List<Articulo>)Session["listaCarrito"];
+                lblTotal.Text = carrito.MontoTotal.ToString();  //si viene por botón, para que no rompa y muestre ceros en los campos
+                lblCantidad.Text = carrito.CantidadArticulos.ToString();
 
                 if (listaCarrito != null) //este if impide que rompa si intenta listar precios de una lista Carrito está con null, y de paso en el else aprovecho para crearla
                 {

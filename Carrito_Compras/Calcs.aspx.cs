@@ -20,20 +20,11 @@ namespace Carrito_Compras
             try
             {
                 listaAux = negocio.listar();
-                int idQuitar = Convert.ToInt32(Request.QueryString["idQuitar"]); 
-
-                if (listaCarrito == null)
-                {
-                    listaCarrito = new List<Articulo>();
-                }
-                if (Session["listaCarrito"] == null)
-                {
-                    Response.Redirect("CatalogoArticulos.aspx");
-                }
 
                 if (Request.QueryString["idQuitar"] != null)
                 {
-                    List<Articulo> listaArticulos = (List<Articulo>)Session["listaArtAgregados"];
+                    int idQuitar = Convert.ToInt32(Request.QueryString["idQuitar"]);
+                    List<Articulo> listaArticulos = (List<Articulo>)Session["listaArticulos"];
                     listaCarrito = (List<Articulo>)Session["listaCarrito"];
                     listaCarrito.Remove(listaCarrito.Find(i => i.Id == idQuitar)); //lo mismo que pasa con Añadir, solo que en este caso, remueve el artículo con Id que matchee del enviado
                     Session["listaCarrito"] = listaCarrito;
