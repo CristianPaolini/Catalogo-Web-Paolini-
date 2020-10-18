@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="card border-dark align-content-sm-center" style="width: 18rem;">
+    <div style="align-content:center; width: 22rem" class="card border-light mb-3" style="width: 18rem;">
         <img src="<% = articuloDetalle.ImagenUrl %>" class="card-img-top" alt="Imagen no disponible">
         <div class="card-body">
             <h2 style="color: black; font-style: italic" class="display-4"><%=articuloDetalle.Nombre %></h2>
