@@ -17,6 +17,7 @@ namespace Carrito_Compras
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             ArticuloNegocio negocio = new ArticuloNegocio();
             List<Articulo> listaAux = new List<Articulo>();
 
@@ -24,11 +25,6 @@ namespace Carrito_Compras
             {
                 listaAux = negocio.listar();
                 int idAux = Convert.ToInt32(Request.QueryString["idArticulo"]);
-
-                if (listaCarrito == null)
-                {
-                    listaCarrito = new List<Articulo>();
-                }
 
                 if (Session["listaArtAgregados"] == null) //si no tiene nada, creo una lista Carrito
                 {
@@ -40,7 +36,7 @@ namespace Carrito_Compras
                 {
 
                     listaCarrito = (List<Articulo>)Session["listaArtAgregados"];
-                    listaCarrito.Add(listaAux.Find(i => i.Id == idAux));
+                    listaCarrito.Add(listaAux.Find(i => i.Id == idAux)); //busco 
                     Session["listaCarrito"] = listaCarrito;
 
                 }
@@ -48,12 +44,19 @@ namespace Carrito_Compras
                 listaCarrito = (List<Articulo>)Session["listaCarrito"];
 
                 SqlMoney total = 0;
-                foreach (var articulo in listaCarrito)
+                if (listaCarrito != null) //este if impide que rompa si intenta listar precios de una lista Carrito está con null, y de paso en el else aprovecho para crearla
                 {
-                    total += articulo.Precio;
+                    foreach (var articulo in listaCarrito)
+                    {
+                        total += articulo.Precio;
+                    }
+                    lblTotal.Text = total.ToString();
                 }
-                lblTotal.Text = total.ToString();
 
+                else
+                {
+                    listaCarrito = new List<Articulo>();
+                }
             }
             catch (Exception ex)
             {
