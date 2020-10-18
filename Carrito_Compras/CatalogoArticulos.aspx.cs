@@ -20,13 +20,13 @@ namespace Carrito_Compras
                 if (Session["listaBuscados"] == null)
                 {
                     listaArticulos = negocio.listar();
-                    Session.Add("listaArticulos", listaArticulos); //guardo en Session la lista de artículos entera, para luego realizar la búsqueda sobre la misma
+                    Session.Add("listaArticulos", listaArticulos);
                 }
                 else
                 {
 
-                    listaArticulos = (List<Articulo>)Session["listaBuscados"]; //si no es null la Session, los artículos a mostrar en el Load de la página son los asignados a la Session "listaBuscados"
-                    Session["listaBuscados"] = null; //se setea nuevamente en null, para dejarlo preparado para una nueva búsqueda
+                    listaArticulos = (List<Articulo>)Session["listaBuscados"];
+                    Session["listaBuscados"] = null;
                 }
 
             }
@@ -45,9 +45,9 @@ namespace Carrito_Compras
                 Session.Add("listaBuscados", listaBuscados);
             }
             listaBuscados = (List<Articulo>)Session["listaArticulos"];
-            Session["listaBuscados"] = listaBuscados.FindAll(i => i.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper()) || i.Marca.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper()) || i.Categoria.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper())); //asigno todos los matches
+            Session["listaBuscados"] = listaBuscados.FindAll(i => i.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper()) || i.Marca.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper()) || i.Categoria.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper())); 
 
-            Session["listaArticulos"] = Session["listaBuscados"]; //me paso todos los que matchearon en Session "listaBuscados", a la Session "listaArticulos", para luego hacer un redirect y mostrar los matches
+            Session["listaArticulos"] = Session["listaBuscados"]; 
             Response.Redirect("CatalogoArticulos.aspx");
 
         }

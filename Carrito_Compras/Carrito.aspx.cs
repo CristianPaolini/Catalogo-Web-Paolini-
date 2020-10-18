@@ -26,56 +26,45 @@ namespace Carrito_Compras
             {
                 listaAux = negocio.listar();
 
-                if (Session["listaArtAgregados"] == null) //si no tiene nada, creo una lista Carrito
+                if (Session["listaArtAgregados"] == null)
                 {
                     listaCarrito = new List<Articulo>();
                     Session.Add("listaArtAgregados", listaCarrito);
                 }
 
-                if (Request.QueryString["idArticulo"] != null) //si no devuelve null, está todo bien, procede a añadirlo
+                if (Request.QueryString["idArticulo"] != null)
                 {
                     int idAux = Convert.ToInt32(Request.QueryString["idArticulo"]);
                     List<Articulo> listaArticulos = (List<Articulo>)Session["listaArticulos"];
                     listaCarrito = (List<Articulo>)Session["listaArtAgregados"];
-                    listaCarrito.Add(listaAux.Find(i => i.Id == idAux)); //busco coincidencia del id traído por QueryString. Agrego el ID que matchea (si lo hay) 
+                    listaCarrito.Add(listaAux.Find(i => i.Id == idAux));
                     Session["listaCarrito"] = listaCarrito;
-                   
 
                 }
 
                 listaCarrito = (List<Articulo>)Session["listaCarrito"];
-                lblTotal.Text = carrito.MontoTotal.ToString();  //si viene por botón, para que no rompa y muestre ceros en los campos
+                lblTotal.Text = carrito.MontoTotal.ToString();
                 lblCantidad.Text = carrito.CantidadArticulos.ToString();
 
-                if (listaCarrito != null) //este if impide que rompa si intenta listar precios de una lista Carrito está con null, y de paso en el else aprovecho para crearla
+                if (listaCarrito != null)
                 {
 
-<<<<<<< Updated upstream
                     foreach (var articulo in listaCarrito)
                     {
                         carrito.MontoTotal += articulo.Precio;
-                        carrito.CantidadArticulos++;
+
                     }
                     lblTotal.Text = carrito.MontoTotal.ToString();
-                    lblCantidad.Text = carrito.CantidadArticulos.ToString();
+                    List<Articulo> listaArtCarrito = new List<Articulo>();
+                    listaArtCarrito = (List<Articulo>)Session["listaCarrito"];
+                    Session["cantArticulos"] = listaArtCarrito.Count();
+                    lblCantidad.Text = Session["cantArticulos"].ToString();
                 }
 
                 else
                 {
                     listaCarrito = new List<Articulo>();
                 }
-               
-=======
-                if (listaCarrito != null)
-                {
-                    foreach (var item in listaCarrito)
-                    {
-                        total += (decimal)item.Precio;
-                    }
-                    lblTotal.Text = total.ToString();
-                }
-                
->>>>>>> Stashed changes
             }
             catch (Exception ex)
             {
