@@ -26,7 +26,7 @@ namespace Carrito_Compras
                     int idQuitar = Convert.ToInt32(Request.QueryString["idQuitar"]);
                     List<Articulo> listaArticulos = (List<Articulo>)Session["listaArticulos"];
                     listaCarrito = (List<Articulo>)Session["listaCarrito"];
-                    listaCarrito.Remove(listaCarrito.Find(i => i.Id == idQuitar)); //lo mismo que pasa con Añadir, solo que en este caso, remueve el artículo con Id que matchee del enviado
+                    listaCarrito.Remove(listaCarrito.Find(i => i.Id == idQuitar));
                     Session["listaCarrito"] = listaCarrito;
                     Response.Redirect("Carrito.aspx");
                 }
