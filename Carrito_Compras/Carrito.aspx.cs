@@ -23,7 +23,7 @@ namespace Carrito_Compras
             Dominio.Carrito carrito = new Dominio.Carrito();
 
             try
-            {                
+            {
                 listaAux = negocio.listar();
 
                 if (Session["listaArtAgregados"] == null) //si no tiene nada, creo una lista Carrito
@@ -48,12 +48,12 @@ namespace Carrito_Compras
 
                 if (listaCarrito != null) //este if impide que rompa si intenta listar precios de una lista Carrito está con null, y de paso en el else aprovecho para crearla
                 {
-                    
+
                     foreach (var articulo in listaCarrito)
                     {
                         carrito.MontoTotal += articulo.Precio;
                         carrito.CantidadArticulos++;
-                        
+
                     }
                     lblTotal.Text = carrito.MontoTotal.ToString();
                     lblCantidad.Text = carrito.CantidadArticulos.ToString();

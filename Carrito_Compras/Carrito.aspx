@@ -25,6 +25,7 @@
 
 
 
+
                     </tr>
 
                     <% } %>
@@ -33,7 +34,8 @@
                     </tr>
 
                     <tr>
-                        <td>Cantidad de artículos: <asp:Label ID="lblCantidad" runat="server" /></td>
+                        <td>Cantidad de artículos:
+                            <asp:Label ID="lblCantidad" runat="server" /></td>
                     </tr>
                 </table>
 

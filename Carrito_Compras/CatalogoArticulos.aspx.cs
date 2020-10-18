@@ -15,40 +15,41 @@ namespace Carrito_Compras
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulos = negocio.listar();
-            Session[Session.SessionID + "listaArticulos"] = listaArticulos;
+            try
+            {
+                if (Session["listaBuscados"] == null)
+                {
+                    listaArticulos = negocio.listar();
+                    Session.Add("listaArticulos", listaArticulos); //guardo en Session la lista de artículos entera, para luego realizar la búsqueda sobre la misma
+                }
+                else
+                {
+
+                    listaArticulos = (List<Articulo>)Session["listaBuscados"]; //si no es null la Session, los artículos a mostrar en el Load de la página son los asignados a la Session "listaBuscados"
+                    Session["listaBuscados"] = null; //se setea nuevamente en null, para dejarlo preparado para una nueva búsqueda
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            List<Articulo> listaAux;
-            Articulo buscado = new Articulo();
-            try
+            List<Articulo> listaBuscados = new List<Articulo>();
+            if (Session["listaBuscados"] == null)
             {
-                listaAux = negocio.listar();
-                buscado = listaAux.Find(i => i.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper()));
-                if (buscado == null)
-                {
-                    string msgErrorBusqueda = "No se han encontrado coincidencias.";
-                    lblError.Text = msgErrorBusqueda;
-                }
-                else if (txtBuscar.Text.Length == 0)
-                {
-                    string msgSinIngreso = "No ha ingresado nada para buscar.";
-                    lblError.Text = msgSinIngreso;
-                }
-                else
-                {
-                    Response.Redirect("Detalle.aspx?idArticulo=" + buscado.Id.ToString());
-                }
-
+                Session.Add("listaBuscados", listaBuscados);
             }
-            catch (Exception ex)
-            {
+            listaBuscados = (List<Articulo>)Session["listaArticulos"];
+            Session["listaBuscados"] = listaBuscados.FindAll(i => i.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper()) || i.Marca.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper()) || i.Categoria.Descripcion.ToUpper().Contains(txtBuscar.Text.ToUpper())); //asigno todos los matches
 
-                throw ex;
-            }
+            Session["listaArticulos"] = Session["listaBuscados"]; //me paso todos los que matchearon en Session "listaBuscados", a la Session "listaArticulos", para luego hacer un redirect y mostrar los matches
+            Response.Redirect("CatalogoArticulos.aspx");
+
         }
 
     }

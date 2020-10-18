@@ -14,14 +14,11 @@
                 <% } %>
             </div>
             <div>
-                <asp:Button BorderStyle="Inset" ID="btnBuscar" runat="server" Text="Buscar por nombre:" OnClick="btnBuscar_Click" />
+                <asp:Button class="btn btn-md btn-primary" BorderStyle="Inset" ID="btnBuscar" runat="server" Text="Buscar Artículo:" OnClick="btnBuscar_Click" />
 
-                <asp:TextBox MaxLength="200" ID="txtBuscar" runat="server" TextMode="Search" CausesValidation="true"></asp:TextBox>
+                <asp:TextBox Width="170px" Height="35px" MaxLength="200" ID="txtBuscar" runat="server" TextMode="Search" CausesValidation="true"></asp:TextBox>
             </div>
 
-            <p>
-                <asp:Label Font-Italic="true" ForeColor="DarkRed" Font-Size="Larger" Font-Bold="true" ID="lblError" runat="server"></asp:Label>
-            </p>
         </div>
     </div>
     <hr />
