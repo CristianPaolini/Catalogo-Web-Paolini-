@@ -26,17 +26,16 @@ namespace Carrito_Compras
             {
                 listaAux = negocio.listar();
 
-                if (Session["listaArtAgregados"] == null)
+                if (Session["listaCarrito"] == null)
                 {
                     listaCarrito = new List<Articulo>();
-                    Session.Add("listaArtAgregados", listaCarrito);
+                    Session.Add("listaCarrito", listaCarrito);
                 }
 
                 if (Request.QueryString["idArticulo"] != null)
                 {
                     int idAux = Convert.ToInt32(Request.QueryString["idArticulo"]);
-                    List<Articulo> listaArticulos = (List<Articulo>)Session["listaArticulos"];
-                    listaCarrito = (List<Articulo>)Session["listaArtAgregados"];
+                    listaCarrito = (List<Articulo>)Session["listaCarrito"];
                     listaCarrito.Add(listaAux.Find(i => i.Id == idAux));
                     Session["listaCarrito"] = listaCarrito;
 

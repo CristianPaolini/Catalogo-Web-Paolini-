@@ -24,7 +24,6 @@ namespace Carrito_Compras
                 if (Request.QueryString["idQuitar"] != null)
                 {
                     int idQuitar = Convert.ToInt32(Request.QueryString["idQuitar"]);
-                    List<Articulo> listaArticulos = (List<Articulo>)Session["listaArticulos"];
                     listaCarrito = (List<Articulo>)Session["listaCarrito"];
                     listaCarrito.Remove(listaCarrito.Find(i => i.Id == idQuitar));
                     Session["listaCarrito"] = listaCarrito;
