@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h2 style="color: darkslateblue; font-style: italic">Bienvenido al carrito de compras virtual. Por favor, presione el botón que se encuentra debajo para ser redirigido/a al catálogo de artículos:</h2>
+        <h2 style="color: darkslateblue; font-style: italic">Bienvenido/a al carrito de compras virtual. Por favor, presione el botón que se encuentra debajo para ser redirigido/a al catálogo de artículos:</h2>
         <p class="lead"></p>
         <p><a href="CatalogoArticulos.aspx" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Ir al catálogo</a></p>
     </div>

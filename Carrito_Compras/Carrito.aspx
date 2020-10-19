@@ -44,7 +44,7 @@
         </div>
     </div>
     <div>
-        <td><a href="CatalogoArticulos.aspx" class="btn btn-secondary btn active" role="button">Seguir comprando</a></td>
+        <td><a href="CatalogoArticulos.aspx" class="btn btn-secondary btn active" role="button">Continuar comprando</a></td>
     </div>
 </asp:Content>
 
