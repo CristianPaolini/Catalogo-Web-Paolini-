@@ -23,8 +23,8 @@
                 { %>
 
             <div class="col mb-4">
-                <div class="card border-dark align-content-sm-center" style="width: 16rem;">
-                    <img src="<% = item.ImagenUrl %>" class="card-img-top" alt="Imagen no disponible">
+                <div class="card border-dark align-content-sm-center" style="">
+                    <img style="max-width: 300px; max-height: 300px; object-fit: contain" src="<% = item.ImagenUrl %>" class="card-img-top" alt="Imagen no disponible">
                     <div class="card-body">
                         <h5 style="color: darkblue; font-style: oblique" class="card-title"><% = item.Nombre %></h5>
                         <p style="color: black; font-style: italic" class="card-text"><%= item.Marca %></p>
