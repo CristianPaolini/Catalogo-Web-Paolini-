@@ -19,17 +19,20 @@ namespace Carrito_Compras
 
             ArticuloNegocio negocio = new ArticuloNegocio();
             List<Articulo> listaAux;
-            try
-            {
-                listaAux = negocio.listar();
-                int idAux = Convert.ToInt32(Request.QueryString["idArticulo"]);
-                articuloDetalle = listaAux.Find(i => i.Id == idAux);
-            }
-            catch (Exception ex)
-            {
-                Session.Add("errorEncontrado", ex.ToString());
-                Response.Redirect("Error.aspx");
-            }
+
+            if (Request.QueryString["idArticulo"] != null)
+                try
+                {
+                    listaAux = negocio.listar();
+                    int idAux = Convert.ToInt32(Request.QueryString["idArticulo"]);
+                    articuloDetalle = listaAux.Find(i => i.Id == idAux);
+                }
+                catch (Exception ex)
+                {
+                    Session.Add("errorEncontrado", ex.ToString());
+                    Response.Redirect("Error.aspx");
+                }
+            else Response.Redirect("CatalogoArticulos.aspx");
         }
 
     }
